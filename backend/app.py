@@ -6,7 +6,12 @@ from kpi_extractor import extract_kpis
 from red_flag_rules import detect_red_flags
 
 app = Flask(__name__)
+
 CORS(app)
+
+@app.route("/", methods=["GET"])
+def index():
+    return "LedgerLens backend is live. Use POST /analyze to analyze a PDF."
 
 @app.route("/analyze", methods=["POST"])
 def analyze():
