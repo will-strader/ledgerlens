@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import tempfile
-from pdf_parser import extract_text_from_pdf, extract_financial_sections
-from kpi_extractor import extract_kpis
-from red_flag_rules import detect_red_flags
+from backend.pdf_parser import extract_text_from_pdf, extract_financial_sections
+from backend.kpi_extractor import extract_kpis
+from backend.red_flag_rules import detect_red_flags
 
 app = Flask(__name__)
 CORS(app)
